@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/Icon_home/Icon_home.dart';
+import 'package:my_app/IconClick/Icon_contact/Icon_contact.dart';
+import 'package:my_app/IconClick/Icon_home/Icon_home.dart';
 
 class Drawering extends StatelessWidget {
   const Drawering({
@@ -36,14 +37,25 @@ class Drawering extends StatelessWidget {
               ),
             ),
           ),
-          const ListTile(
-            iconColor: Colors.white,
-            leading: Icon(Icons.call),
-            title: Text(
-              "Contact",
-              style: TextStyle(color: Colors.white),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const IconContacts()),
+              );
+              print("Container pressed!");
+            },
+            child: Container(
+              child: ListTile(
+                iconColor: Colors.white,
+                leading: Icon(Icons.call),
+                title: Text(
+                  "Contact",
+                  style: TextStyle(color: Colors.white),
+                ),
+                trailing: Icon(Icons.navigate_next),
+              ),
             ),
-            trailing: Icon(Icons.navigate_next),
           ),
           const ListTile(
             // tileColor: const Color.fromARGB(177, 255, 153, 0).withOpacity(0.7),

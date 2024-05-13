@@ -14,7 +14,7 @@ class _Icon_HomesState extends State<Icon_Homes> {
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: const Text(
-          "Icon_Homes",
+          "Homes",
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         flexibleSpace: Container(
