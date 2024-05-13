@@ -4,7 +4,7 @@ import 'package:my_app/Login_up/signin_screen.dart';
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  // This widget is the root of your application.r
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const SingInScreen(),
-      // home: main_data(),
     );
   }
 }

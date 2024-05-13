@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/Icon_home/Icon_home.dart';
 
 class Drawering extends StatelessWidget {
   const Drawering({
@@ -13,16 +14,27 @@ class Drawering extends StatelessWidget {
       child: ListView(
         children: [
           DrawerHeader(
-            child: Image.network("https://www.acledasecurities.com.kh/as/assets/layout/logo1.png")
-          ),
-          const ListTile(
-            iconColor: Colors.white, 
-            leading: Icon(Icons.home),
-            title: Text(
-              "Home",
-              style: TextStyle(color: Colors.white),
+              child: Image.network(
+                  "https://www.acledasecurities.com.kh/as/assets/layout/logo1.png")),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Icon_Homes()),
+              );
+              print("Container pressed!");
+            },
+            child: Container(
+              child: const ListTile(
+                iconColor: Colors.white,
+                leading: Icon(Icons.home),
+                title: Text(
+                  "Home",
+                  style: TextStyle(color: Colors.white),
+                ),
+                trailing: Icon(Icons.navigate_next),
+              ),
             ),
-            trailing: Icon(Icons.navigate_next),
           ),
           const ListTile(
             iconColor: Colors.white,
