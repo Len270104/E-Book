@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 // import 'package:iconsax/iconsax.dart';
 import 'package:my_app/Home_screen/Drawer.dart';
+import 'package:my_app/Home_screen/main_data.dart';
 import 'package:my_app/views/Background/background_display.dart';
 import 'package:my_app/views/E-book/E-Books.dart';
 import 'package:my_app/views/Num_Home/main_Home_display.dart';
@@ -153,7 +154,8 @@ class _MyHomePageState extends State<body_screen> {
                                       // Icons.qr_code_scanner_sharp,
                                       Icons.home,
                                     ),
-                                    color: const Color.fromARGB(255, 9, 73, 125),
+                                    color:
+                                        const Color.fromARGB(255, 9, 73, 125),
                                     iconSize: 55,
                                   ),
                                   const Text(
@@ -217,7 +219,8 @@ class _MyHomePageState extends State<body_screen> {
                                     icon: const Icon(
                                         // Icons.account_balance_wallet,
                                         Icons.library_books),
-                                    color: const Color.fromARGB(255, 9, 73, 125),
+                                    color:
+                                        const Color.fromARGB(255, 9, 73, 125),
                                     iconSize: 55,
                                   ),
                                   const Text(
@@ -880,7 +883,14 @@ class _MyHomePageState extends State<body_screen> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            IconButton(onPressed: () {}, icon: const Icon(Icons.home)),
+            IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const main_data()),
+                  );
+                },
+                icon: const Icon(Icons.home)),
             IconButton(onPressed: () {}, icon: const Icon(Icons.play_arrow)),
             const SizedBox(width: 40),
             IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
