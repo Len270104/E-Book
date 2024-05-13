@@ -19,6 +19,13 @@ class E_Books_display extends StatelessWidget {
                   color: Colors.white,
                   fontWeight: FontWeight.bold),
             ),
+            Text(
+              "Display",
+              style: TextStyle(
+                  fontSize: 25,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold),
+            )
           ],
         ),
       ),
