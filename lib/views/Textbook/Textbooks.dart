@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class TextBooks_display extends StatelessWidget {
-  const TextBooks_display({super.key});
+class textbook_display extends StatelessWidget {
+  const textbook_display({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+   return Scaffold(
       appBar: AppBar(
         elevation: 0,
         centerTitle: false,
@@ -13,7 +13,7 @@ class TextBooks_display extends StatelessWidget {
         title: const Stack(
           children: [
             Text(
-              "Textbooks",
+              "TEXTBOOK",
               style: TextStyle(
                   fontSize: 25,
                   color: Colors.white,

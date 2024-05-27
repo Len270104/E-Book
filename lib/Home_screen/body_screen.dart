@@ -1,4 +1,6 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 // import 'package:iconsax/iconsax.dart';
 import 'package:my_app/Home_screen/Drawer.dart';
@@ -13,7 +15,6 @@ import 'package:my_app/views/Bookmark/main_Book_mark.dart';
 import 'package:my_app/views/favorites/main_favorites_display.dart';
 import 'package:my_app/views/Stores/main_store_book.dart';
 import 'package:my_app/views/Menu_Book/main_menu_book.dart';
-
 // import '../Book_list/Book_card.dart';
 // import '../Book_list/Book_card.dart';
 // import '../Book_list/item_book.dart';
@@ -28,6 +29,7 @@ class body_screen extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<body_screen> {
+  int pages = 0;
   void _incrementCounter() {
     setState(() {});
   }
@@ -638,7 +640,7 @@ class _MyHomePageState extends State<body_screen> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        const TextBooks_display()),
+                                        const textbook_display()),
                               );
                               print("Container pressed!");
                             },
@@ -673,18 +675,19 @@ class _MyHomePageState extends State<body_screen> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                const TextBooks_display()),
+                                                const textbook_display()),
                                       );
                                     },
                                     icon: const Icon(
-                                      Icons.text_fields_sharp,
+                                      // Icons.swap_horizontal_circle,
+                                      Icons.text_fields_rounded,
                                     ),
                                     color:
                                         const Color.fromARGB(255, 9, 73, 125),
                                     iconSize: 55,
                                   ),
                                   const Text(
-                                    "TextBook",
+                                    "TEXTBOOK ",
                                     style: TextStyle(
                                       fontSize: 15,
                                       fontWeight: FontWeight.w700,
@@ -778,89 +781,6 @@ class _MyHomePageState extends State<body_screen> {
           /// only image ///
 
           // Image.asset("assets/images/16.jpg"),
-
-          /// list Book ///
-
-          // Padding(
-          //   padding: const EdgeInsets.only(left: 15, right: 15),
-          //   child: Column(
-          //     crossAxisAlignment: CrossAxisAlignment.start,
-          //     children: [
-          //       Row(
-          //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //         children: [
-          //           const Text(
-          //             "List Books",
-          //             style: TextStyle(
-          //               fontSize: 20,
-          //               fontWeight: FontWeight.bold,
-          //             ),
-          //           ),
-          //           TextButton(
-          //             onPressed: () => Navigator.push(
-          //               context,
-          //               MaterialPageRoute(
-          //                 builder: (context) =>
-          //                     const Book_card(), //go to folder food_screen
-          //               ),
-          //             ),
-          //             child: const Text(
-          //               "View all",
-          //               style: TextStyle(
-          //                 fontSize: 15,
-          //                 fontWeight: FontWeight.w700,
-          //               ),
-          //             ),
-          //           ),
-          //         ],
-          //       ),
-          //       // const SizedBox(height: 5),
-          //       // SingleChildScrollView(
-          //       //   scrollDirection: Axis.horizontal,
-          //       //   child: Row(
-          //       //     children: List.generate(
-          //       //       books.length,
-          //       //       (index) => GestureDetector(
-          //       //         onTap: () {},
-          //       //         child: Container(
-          //       //           margin: const EdgeInsets.only(right: 10),
-          //       //           width: 182,
-          //       //           child: Stack(
-          //       //             children: [
-          //       //               Column(
-          //       //                 crossAxisAlignment: CrossAxisAlignment.start,
-          //       //                 children: [
-          //       //                   Container(
-          //       //                     width: double.infinity,
-          //       //                     height: 200,
-          //       //                     decoration: BoxDecoration(
-          //       //                       borderRadius: BorderRadius.circular(15),
-          //       //                       image: DecorationImage(
-          //       //                         image: AssetImage(books[index].image),
-          //       //                         fit: BoxFit.fill,
-          //       //                       ),
-          //       //                     ),
-          //       //                   ),
-          //       //                   const SizedBox(height: 10),
-          //       //                   Text(
-          //       //                     books[index].name,
-          //       //                     style: const TextStyle(
-          //       //                       fontSize: 18,
-          //       //                       fontWeight: FontWeight.bold,
-          //       //                     ),
-          //       //                   ),
-          //       //                 ],
-          //       //               ),
-          //       //             ],
-          //       //           ),
-          //       //         ),
-          //       //       ),
-          //       //     ),
-          //       //   ),
-          //       // ),
-          //     ],
-          //   ),
-          // ),
         ],
       ),
 
@@ -872,32 +792,66 @@ class _MyHomePageState extends State<body_screen> {
           borderRadius:
               BorderRadius.circular(50.0), // Set your desired corner radius
         ),
-        backgroundColor: Colors.pink,
+        backgroundColor: const Color.fromARGB(255, 238, 238, 238),
         onPressed: () {},
         child: const Icon(Icons.shopping_cart),
       ),
       bottomNavigationBar: BottomAppBar(
-        notchMargin: 7,
+        height: 65,
+        notchMargin: 5,
         shape: const CircularNotchedRectangle(),
-        color: Colors.orange,
+        color: Colors.green,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const main_data()),
-                  );
-                },
-                icon: const Icon(Icons.home)),
-            IconButton(onPressed: () {}, icon: const Icon(Icons.play_arrow)),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const main_data()),
+                );
+              },
+              icon: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Icon(Icons.home,
+                      size: 26, color: const Color.fromARGB(255, 0, 0, 0)),
+                ],
+              ),
+            ),
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.play_arrow,
+                    size: 26, color: Color.fromARGB(255, 0, 0, 0))),
             const SizedBox(width: 40),
-            IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-            IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz)),
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.search,
+                    size: 26, color: Color.fromARGB(255, 0, 0, 0))),
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.more_horiz,
+                    size: 26, color: Color.fromARGB(255, 0, 0, 0))),
           ],
         ),
       ),
+      // bottomNavigationBar: CurvedNavigationBar(
+      //   backgroundColor: Colors.transparent,
+      //   buttonBackgroundColor: Colors.green,
+      //   color: Colors.green,
+      //   animationDuration: const Duration(milliseconds: 300),
+      //   items: const [
+      //     Icon(Icons.home, size: 26, color: Colors.white),
+      //     Icon(Icons.message, size: 26, color: Colors.white),
+      //     Icon(Icons.notification_add, size: 26, color: Colors.white),
+      //     Icon(Icons.person, size: 26, color: Colors.white),
+      //   ],
+      //   onTap: (index) {
+      //     setState(() {
+      //       pages = index;
+      //     });
+      //   },
+      // ),
     );
   }
 
