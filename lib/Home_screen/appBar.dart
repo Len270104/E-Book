@@ -9,7 +9,7 @@ AppBar appBar(context) {
   return AppBar(
     shadowColor: const Color.fromARGB(232, 0, 0, 0),
     title: const Text(
-      "Movies",
+      "Library",
       style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
     ),
     actions: [
@@ -43,8 +43,8 @@ AppBar appBar(context) {
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Colors.pink,
-            Colors.indigo,
+            Color.fromARGB(255, 210, 0, 0),
+            Color.fromARGB(255, 210, 0, 0),
           ],
         ),
       ),
