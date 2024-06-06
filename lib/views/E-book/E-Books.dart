@@ -9,23 +9,14 @@ class E_Books_display extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         centerTitle: false,
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 210, 0, 0),
         title: const Stack(
           children: [
             Text(
               "E-Books",
-              style: TextStyle(
-                  fontSize: 25,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold),
+              style:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
             ),
-            Text(
-              "Display",
-              style: TextStyle(
-                  fontSize: 25,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold),
-            )
           ],
         ),
       ),

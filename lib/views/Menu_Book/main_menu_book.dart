@@ -9,16 +9,21 @@ class Menu_books extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         centerTitle: false,
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 210, 0, 0),
         title: const Text(
           "Menu Book",
-          style: TextStyle(fontWeight: FontWeight.w700),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
         ),
       ),
       body: const Row(
         children: [
           SizedBox(
-            child: Text("My Menu Book"),
+            child: Text(
+              "My Menu Book",
+              style: TextStyle(
+                  color: Color.fromARGB(255, 0, 0, 0),
+                  fontWeight: FontWeight.bold),
+            ),
           )
         ],
       ),

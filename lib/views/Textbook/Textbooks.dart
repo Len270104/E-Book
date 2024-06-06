@@ -5,19 +5,17 @@ class textbook_display extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
+    return Scaffold(
       appBar: AppBar(
         elevation: 0,
         centerTitle: false,
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 210, 0, 0),
         title: const Stack(
           children: [
             Text(
-              "TEXTBOOK",
-              style: TextStyle(
-                  fontSize: 25,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold),
+              "Textbook",
+              style:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
             ),
           ],
         ),

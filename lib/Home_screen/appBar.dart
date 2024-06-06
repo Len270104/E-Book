@@ -43,8 +43,8 @@ AppBar appBar(context) {
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Color.fromARGB(255, 210, 0, 0),
-            Color.fromARGB(255, 210, 0, 0),
+            Color.fromARGB(255, 1, 189, 241),
+            Color.fromARGB(255, 1, 189, 241),
           ],
         ),
       ),

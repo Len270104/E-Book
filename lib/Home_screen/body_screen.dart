@@ -1,27 +1,18 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
-// import 'package:iconsax/iconsax.dart';
 import 'package:my_app/Home_screen/Drawer.dart';
-import 'package:my_app/Home_screen/main_data.dart';
-import 'package:my_app/Search/search.dart';
 import 'package:my_app/views/Background/background_display.dart';
 import 'package:my_app/views/E-book/E-Books.dart';
 import 'package:my_app/views/Num_Home/main_Home_display.dart';
+import 'package:my_app/views/Stores/main_store_book.dart';
 import 'package:my_app/views/Textbook/Textbooks.dart';
-// import 'package:my_app/views/aba_scan/main_scan_display.dart';
 import 'package:my_app/views/library/main_library_display.dart';
 import 'package:my_app/views/Bookmark/main_Book_mark.dart';
 import 'package:my_app/views/favorites/main_favorites_display.dart';
-import 'package:my_app/views/Stores/main_store_book.dart';
 import 'package:my_app/views/Menu_Book/main_menu_book.dart';
-// import '../Book_list/Book_card.dart';
-// import '../Book_list/Book_card.dart';
-// import '../Book_list/item_book.dart';
 import '../image_1/Image_V1.dart';
 
-// import 'google_fonts';
 class body_screen extends StatefulWidget {
   const body_screen({super.key});
 
@@ -84,23 +75,6 @@ class _MyHomePageState extends State<body_screen> {
                     ]),
                     borderRadius: BorderRadius.circular(15),
                     color: Colors.white,
-                    // boxShadow: const [
-                    //   BoxShadow(
-                    //     // color: Color.fromARGB(255, 183, 183, 183),
-                    //     offset: Offset(
-                    //       1.0,
-                    //       5.0,
-                    //     ),
-                    //     blurRadius: 10.0,
-                    //     spreadRadius: 3.0,
-                    //   ), //BoxShadow
-                    //   BoxShadow(
-                    //     // color: Color.fromARGB(255, 154, 156, 164),
-                    //     offset: Offset(1, 1),
-                    //     blurRadius: 3,
-                    //     spreadRadius: 10,
-                    //   ), //BoxShadow
-                    // ],
                   ),
                   child: Column(
                     children: [
@@ -787,82 +761,65 @@ class _MyHomePageState extends State<body_screen> {
 
       // drawer: const Drawering(),
       drawer: const Drawering(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        shape: RoundedRectangleBorder(
-          borderRadius:
-              BorderRadius.circular(50.0), // Set your desired corner radius
-        ),
-        backgroundColor: const Color.fromARGB(255, 238, 238, 238),
-        onPressed: () {
-          print("settings");
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const Search_screen(),
-            ),
-          );
-        },
-        child: const Icon(
-          Icons.search,
-          color: Color.fromARGB(255, 0, 0, 0),
-        ),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        height: 65,
-        notchMargin: 5,
-        shape: const CircularNotchedRectangle(),
-        color: Color.fromARGB(255, 210, 0, 0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            IconButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const main_data()),
-                );
-              },
-              icon: Stack(
-                alignment: Alignment.center,
-                children: [
-                  Icon(Icons.home,
-                      size: 26, color: Color.fromARGB(255, 255, 255, 255)),
-                ],
-              ),
-            ),
-            IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.play_arrow,
-                    size: 26, color: Color.fromARGB(255, 255, 255, 255))),
-            const SizedBox(width: 40),
-            IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.add_shopping_cart,
-                    size: 26, color: Color.fromARGB(255, 255, 255, 255))),
-            IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.more_horiz,
-                    size: 26, color: Color.fromARGB(255, 255, 255, 255))),
-          ],
-        ),
-      ),
-      // bottomNavigationBar: CurvedNavigationBar(
-      //   backgroundColor: Colors.transparent,
-      //   buttonBackgroundColor: Colors.green,
-      //   color: Colors.green,
-      //   animationDuration: const Duration(milliseconds: 300),
-      //   items: const [
-      //     Icon(Icons.home, size: 26, color: Colors.white),
-      //     Icon(Icons.message, size: 26, color: Colors.white),
-      //     Icon(Icons.notification_add, size: 26, color: Colors.white),
-      //     Icon(Icons.person, size: 26, color: Colors.white),
-      //   ],
-      //   onTap: (index) {
-      //     setState(() {
-      //       pages = index;
-      //     });
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // floatingActionButton: FloatingActionButton(
+      //   shape: RoundedRectangleBorder(
+      //     borderRadius:
+      //         BorderRadius.circular(50.0), // Set your desired corner radius
+      //   ),
+      //   backgroundColor: const Color.fromARGB(255, 238, 238, 238),
+      //   onPressed: () {
+      //     print("settings");
+      //     Navigator.push(
+      //       context,
+      //       MaterialPageRoute(
+      //         builder: (context) => const Search_screen(),
+      //       ),
+      //     );
       //   },
+      //   child: const Icon(
+      //     Icons.search,
+      //     color: Color.fromARGB(255, 0, 0, 0),
+      //   ),
+      // ),
+      // bottomNavigationBar: BottomAppBar(
+      //   height: 65,
+      //   notchMargin: 5,
+      //   shape: const CircularNotchedRectangle(),
+      //   color: Color.fromARGB(255, 210, 0, 0),
+      //   child: Row(
+      //     mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //     children: [
+      //       IconButton(
+      //         onPressed: () {
+      //           Navigator.push(
+      //             context,
+      //             MaterialPageRoute(builder: (context) => const main_data()),
+      //           );
+      //         },
+      //         icon: Stack(
+      //           alignment: Alignment.center,
+      //           children: [
+      //             Icon(Icons.home,
+      //                 size: 26, color: Color.fromARGB(255, 255, 255, 255)),
+      //           ],
+      //         ),
+      //       ),
+      //       IconButton(
+      //           onPressed: () {},
+      //           icon: const Icon(Icons.play_arrow,
+      //               size: 26, color: Color.fromARGB(255, 255, 255, 255))),
+      //       const SizedBox(width: 40),
+      //       IconButton(
+      //           onPressed: () {},
+      //           icon: const Icon(Icons.add_shopping_cart,
+      //               size: 26, color: Color.fromARGB(255, 255, 255, 255))),
+      //       IconButton(
+      //           onPressed: () {},
+      //           icon: const Icon(Icons.more_horiz,
+      //               size: 26, color: Color.fromARGB(255, 255, 255, 255))),
+      //     ],
+      //   ),
       // ),
     );
   }

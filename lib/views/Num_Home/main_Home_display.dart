@@ -9,10 +9,10 @@ class Home_display extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         centerTitle: false,
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 210, 0, 0),
         title: const Text(
           "Home",
-          style: TextStyle(fontWeight: FontWeight.w700),
+          style: TextStyle(fontWeight: FontWeight.w700, color: Colors.white),
         ),
       ),
       body: const Row(
