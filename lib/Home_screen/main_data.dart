@@ -17,7 +17,6 @@ class main_data extends StatelessWidget {
       drawer: const Drawering(),
       // body: const body_screen(),
       body: MainScreen(),
-
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/Home_screen/body_home_screen.dart';
 import 'package:my_app/Search/search.dart';
+import 'package:my_app/page/complex_screen.dart';
 import 'package:my_app/page/main-home.dart';
 
 class MainScreen extends StatefulWidget {
@@ -92,8 +93,8 @@ class _MainScreenState extends State<MainScreen> {
         Search_screen(),
         MyHomePage(),
         SizedBox(),
-        Container(color: Colors.red),
-        Container(color: Colors.red),
+        ComplexScreen(),
+        Container(color: Color.fromARGB(255, 0, 38, 255)),
         Container(color: Colors.red),
         Container(color: Color.fromARGB(255, 44, 44, 44)),
       ],

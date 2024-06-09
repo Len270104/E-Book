@@ -1,30 +1,26 @@
 import 'package:flutter/material.dart';
 
 class ComplexScreen extends StatefulWidget {
-  const ComplexScreen(String item, {super.key});
+  // const ComplexScreen(String item, {super.key});
 
   @override
   State<ComplexScreen> createState() => _ComplexScreenState();
 }
 
 class _ComplexScreenState extends State<ComplexScreen> {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        title: Text("Complex Screen"),
-        backgroundColor: Colors.grey[900],
-      ),
-      body: _buildFBLayout(),
+      // backgroundColor: Colors.black,
+
+      body: _buildBody(),
     );
   }
 
   Widget _buildFBLayout() {
     return RefreshIndicator(
       color: Colors.pink,
-      onRefresh: () async{
+      onRefresh: () async {
         //code later
       },
       child: ListView(
@@ -95,7 +91,8 @@ class _ComplexScreenState extends State<ComplexScreen> {
           padding: const EdgeInsets.all(8.0),
           child: Text(
             "New on Nextflix",
-            style: TextStyle(color: Colors.white, fontSize: 20),
+            style: TextStyle(
+                color: const Color.fromARGB(255, 0, 0, 0), fontSize: 20),
           ),
         ),
         _buildListViewHorizontal(),
@@ -103,7 +100,8 @@ class _ComplexScreenState extends State<ComplexScreen> {
           padding: const EdgeInsets.all(8.0),
           child: Text(
             "Best Action Movies Of All Time",
-            style: TextStyle(color: Colors.white, fontSize: 20),
+            style: TextStyle(
+                color: const Color.fromARGB(255, 0, 0, 0), fontSize: 20),
           ),
         ),
         _buildListViewHorizontal(),

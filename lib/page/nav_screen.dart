@@ -42,7 +42,7 @@ class _NavScreenState extends State<NavScreen> {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => ComplexScreen(item),
+            builder: (context) => ComplexScreen(),
           ),
         );
       },
