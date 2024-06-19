@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+// import 'package:flutter/widgets.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:my_app/BoxScrolls/csx.dart';
 import 'package:my_app/Home_screen/Drawer.dart';
+import 'package:my_app/model/Boxfours.dart';
 import 'package:my_app/views/Background/background_display.dart';
 import 'package:my_app/views/E-book/E-Books.dart';
 import 'package:my_app/views/Num_Home/main_Home_display.dart';
@@ -12,6 +15,7 @@ import 'package:my_app/views/Bookmark/main_Book_mark.dart';
 import 'package:my_app/views/favorites/main_favorites_display.dart';
 import 'package:my_app/views/Menu_Book/main_menu_book.dart';
 import '../image_1/Image_V1.dart';
+import '../model/Boxfours.dart';
 
 class body_screen extends StatefulWidget {
   const body_screen({super.key});
@@ -681,146 +685,20 @@ class _MyHomePageState extends State<body_screen> {
               ],
             ),
           ),
-          const SizedBox(height: 20),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const Image_V1(),
-                  // builder: (context) => const Book_card(),
-                ),
-              );
-            },
-            child: Padding(
-              padding: const EdgeInsets.all(8.8),
-              child: Container(
-                height: 300,
-                width: 150,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.red,
-                    width: 2.0,
-                  ),
-                  image: const DecorationImage(
-                    image: AssetImage("assets/images/16.jpg"),
-                    // fit: BoxFit.cover,
-                  ),
-                ),
+          Container(
+            child: SizedBox(
+              height: 180,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: HomeScreenData2.listItems.map((item) {
+                  return BoxWidget(item: item);
+                }).toList(),
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: EdgeInsets.zero,
-                  child: Container(
-                    height: 200,
-                    width: 170,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.red,
-                        width: 2.0,
-                      ),
-                      image: const DecorationImage(
-                        image: AssetImage("assets/images/16.jpg"),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.zero,
-                  child: Container(
-                    height: 200,
-                    width: 170,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.red,
-                        width: 2.0,
-                      ),
-                      image: const DecorationImage(
-                        image: AssetImage("assets/images/16.jpg"),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-
-          /// only image ///
-
-          // Image.asset("assets/images/16.jpg"),
         ],
       ),
-
-      // drawer: const Drawering(),
       drawer: const Drawering(),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      // floatingActionButton: FloatingActionButton(
-      //   shape: RoundedRectangleBorder(
-      //     borderRadius:
-      //         BorderRadius.circular(50.0), // Set your desired corner radius
-      //   ),
-      //   backgroundColor: const Color.fromARGB(255, 238, 238, 238),
-      //   onPressed: () {
-      //     print("settings");
-      //     Navigator.push(
-      //       context,
-      //       MaterialPageRoute(
-      //         builder: (context) => const Search_screen(),
-      //       ),
-      //     );
-      //   },
-      //   child: const Icon(
-      //     Icons.search,
-      //     color: Color.fromARGB(255, 0, 0, 0),
-      //   ),
-      // ),
-      // bottomNavigationBar: BottomAppBar(
-      //   height: 65,
-      //   notchMargin: 5,
-      //   shape: const CircularNotchedRectangle(),
-      //   color: Color.fromARGB(255, 210, 0, 0),
-      //   child: Row(
-      //     mainAxisAlignment: MainAxisAlignment.spaceAround,
-      //     children: [
-      //       IconButton(
-      //         onPressed: () {
-      //           Navigator.push(
-      //             context,
-      //             MaterialPageRoute(builder: (context) => const main_data()),
-      //           );
-      //         },
-      //         icon: Stack(
-      //           alignment: Alignment.center,
-      //           children: [
-      //             Icon(Icons.home,
-      //                 size: 26, color: Color.fromARGB(255, 255, 255, 255)),
-      //           ],
-      //         ),
-      //       ),
-      //       IconButton(
-      //           onPressed: () {},
-      //           icon: const Icon(Icons.play_arrow,
-      //               size: 26, color: Color.fromARGB(255, 255, 255, 255))),
-      //       const SizedBox(width: 40),
-      //       IconButton(
-      //           onPressed: () {},
-      //           icon: const Icon(Icons.add_shopping_cart,
-      //               size: 26, color: Color.fromARGB(255, 255, 255, 255))),
-      //       IconButton(
-      //           onPressed: () {},
-      //           icon: const Icon(Icons.more_horiz,
-      //               size: 26, color: Color.fromARGB(255, 255, 255, 255))),
-      //     ],
-      //   ),
-      // ),
     );
   }
 
@@ -833,18 +711,81 @@ class _MyHomePageState extends State<body_screen> {
     'assets/Slider/Poster_TV.png',
     'assets/Slider/Poster_Discount.png',
   ];
+}
 
-  // Future<void> _launchURL(String url) async {
-  //   if (!await canLaunchUrl(Uri.parse(url))) {
-  //     throw 'this link can not open $url';
-  //   }
-  //   await launchUrl(Uri.parse(url));
-  // }
+class BoxWidget extends StatelessWidget {
+  final Box item;
 
-  // Widget popular() {
-  //   return Padding(
-  //     padding: const EdgeInsets.only(left: 15, right: 15),
+  const BoxWidget({Key? key, required this.item}) : super(key: key);
 
-  //   );
-  // }
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => item.route,
+          ),
+        );
+      },
+      child: Container(
+        width: 120,
+        height: 100,
+        margin: const EdgeInsets.only(top: 30, bottom: 28, left: 10, right: 10),
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xFF131B53).withOpacity(0.8),
+              blurRadius: 8,
+            ),
+          ],
+          borderRadius: BorderRadius.circular(20.0),
+          color: Colors.white,
+        ),
+        child: Column(
+          children: [
+            Container(
+              height: 30,
+              width: 30,
+              margin: const EdgeInsets.only(right: 50, top: 10, bottom: 5),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                color: const Color.fromARGB(255, 52, 71, 120),
+              ),
+              child: Center(
+                child: Icon(
+                  item.icon,
+                  size: 20,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+              width: 100,
+              child: Text(
+                item.name,
+                style: const TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 40,
+              width: 100,
+              child: Text(
+                item.text,
+                style: const TextStyle(
+                  fontSize: 8,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }

@@ -12,6 +12,9 @@ AppBar appBar(context) {
       "Library",
       style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
     ),
+    iconTheme: const IconThemeData(
+      color: Color.fromARGB(255, 255, 255, 255),
+    ),
     actions: [
       IconButton(
         onPressed: () {

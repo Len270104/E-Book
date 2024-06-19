@@ -15,11 +15,50 @@ class Home_display extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.w700, color: Colors.white),
         ),
       ),
-      body: const Row(
+      body: ListView(
         children: [
-          SizedBox(
-            child: Text("Home"),
-          )
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: EdgeInsets.zero,
+                  child: Container(
+                    height: 230,
+                    width: 185,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.red,
+                        width: 2.0,
+                      ),
+                      image: const DecorationImage(
+                        image: AssetImage("assets/images/16.jpg"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.zero,
+                  child: Container(
+                    height: 230,
+                    width: 185,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.red,
+                        width: 2.0,
+                      ),
+                      image: const DecorationImage(
+                        image: AssetImage("assets/images/16.jpg"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );

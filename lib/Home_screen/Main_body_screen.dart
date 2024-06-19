@@ -94,7 +94,7 @@ class _MainScreenState extends State<MainScreen> {
         MyHomePage(),
         SizedBox(),
         ComplexScreen(),
-        Container(color: Color.fromARGB(255, 0, 38, 255)),
+        Container(color: Colors.red),
         Container(color: Colors.red),
         Container(color: Color.fromARGB(255, 44, 44, 44)),
       ],
